@@ -28,7 +28,7 @@ describe("Model methods", function() {
     ]);
   });
   describe("Hooks", () => {
-    xit("capitalizes the first letter of the Unicorn name", async () => {
+    it("capitalizes the first letter of the Unicorn name", async () => {
       const rainicorn = await Unicorn.create({
         name: "lAdY rAinIcOrN",
         imageUrl:
@@ -46,7 +46,7 @@ describe("Model methods", function() {
       unicorn1 = await Unicorn.create({ name: "Unicorn Friend", age: 18 });
     });
     describe("Find Birth Year", () => {
-      xit("returns the birth year of a Unicorn", () => {
+      it("returns the birth year of a Unicorn", () => {
         expect(unicorn1.findBirthYear()).to.equal(2000);
       });
     });

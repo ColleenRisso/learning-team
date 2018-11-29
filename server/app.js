@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
-app.use('/api', require('./unicornApi'));
+app.use('/api/unicorns', require('./unicornApi'));
 
 app.use(function(err, req, res, next) {
   console.error(err.stack);

@@ -16,7 +16,7 @@ describe("All Unicorn Route: ", () => {
   });
 
   describe("GET /unicorns", () => {
-    xit("responds with an array via JSON", () => {
+    it("responds with an array via JSON", () => {
       return agent
         .get("/api/unicorns")
         .expect("Content-Type", /json/)
@@ -26,7 +26,7 @@ describe("All Unicorn Route: ", () => {
           expect(res.body).to.have.length(0);
         });
     });
-    xit("returns unicorn if there is one", () => {
+    it("returns unicorn if there is one", () => {
       let unicorn = Unicorn.create({
         name: "Mr. Unicorn",
         age: 30
@@ -60,7 +60,7 @@ describe("All Unicorn Route: ", () => {
       ]);
       unicorn1 = array[0];
     });
-    xit("returns the JSON of the article based on the id", () => {
+    it("returns the JSON of the article based on the id", () => {
       return agent
         .get("/api/unicorns/" + unicorn1.id)
         .expect(200)
@@ -73,7 +73,7 @@ describe("All Unicorn Route: ", () => {
     });
   });
   describe("POST /api/unicorns/", () => {
-    xit("creates a new unicorn", () => {
+    it("creates a new unicorn", () => {
       return agent
         .post("/api/unicorns")
         .send({
